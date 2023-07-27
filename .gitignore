@@ -1,0 +1,23 @@
+# Cypress generated files
+/cypress/videos
+/cypress/screenshots
+/cypress/reports
+
+# Node.js dependencies
+/node_modules
+
+# Cypress binary cache
+/.cache
+
+# Other build artifacts
+/build
+
+# Environment configuration files
+/cypress.env.json
+
+# Node.js dependencies
+/node_modules
+
+# Package lock files
+/package-lock.json
+/yarn.lock

@@ -1,0 +1,15 @@
+{
+  "name": "qantas",
+  "version": "1.0.0",
+  "description": "## Automated Smoke Tests 1. I want to be able to search for a hotel stay 2. I want to be able to reach the checkout page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.17.2"
+  }
+}

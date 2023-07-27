@@ -1,0 +1,6 @@
+{
+  "qantasHotelsPage": {
+    "hotelsPanel": "[data-testid='hotels-panel']",
+    "locationSearchPage": "[data-testid='location-search-input']"
+  }
+}
