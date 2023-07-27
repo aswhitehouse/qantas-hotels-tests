@@ -1,3 +1,5 @@
 {
-  "qantasHotelsUri": "https://www.qantas.com/hotels"
+    "qantasHotelsUri": "https://www.qantas.com/hotels",
+    "city": "Melbourne",
+    "locationTitle": "Melbourne CBD, VIC, Australia"
 }

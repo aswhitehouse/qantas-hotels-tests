@@ -23,7 +23,13 @@
 - These tests typically provide tremendous value in quickly demonstrating constraints in the current system/SDLC
 
 ## Observations
-TODO
+- Really good to have data-testid attributes everywhere, very test friendly
+- The usage of the data-testid element didn't seem consistent in my initial parsing of the DOM, meaning I would either have to somtimes get parent anchor elements or pick other attributes that may be less likely to change, E.G. Role/Aria etc. If it was just on all key fields UI automation would be a breeze!
+- I've tried so far to avoid brittle chaining or id's or css selectors etc.
+- For example the search input boxes both have the same location id name, which Cypress sees and becomes confused about which one is being referrel to, meaning traversal logic is then required i.e. first()
+- In this case, if I were to build out the test suite, I'd need to handle both the Hotel/AirBnb search forms, and rather than write logic to decide which one I'm on and to navigate them, if the data-testid attributes were unique for each one it would simplify the future test logic
+- Sometimes the 'down-shift' menu from the location search results doesn't appear timing my test out, I'm not immediately sure why, however a dynamic wait does help (this is a poll wait and not a static sleep). Sometimes however it never appears, this may be a Cypress runtime issue.
+- Sometimes Qantas Hotels tells me, "Couldn't find any hotels" that match my search, but when I interact with the page in the Cypress portal my search location is there. Maybe a Cypress anomaly?
 
 ## How to run
 - Locally within your Node development environment:
