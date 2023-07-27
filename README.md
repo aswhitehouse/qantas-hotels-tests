@@ -14,8 +14,9 @@
 3. XHR intercept/Middleware control, data control (magic uris etc, test profiles)
 
 - All approaches have drawbacks and the potential to be brittle based on inventory/availability/downstream conditions
-- Wide parameters mean less specificity in the test around the target components e.g. hotel type / property details (which is a very valid smoke test approach, i.e. env stability, critical transactions work etc.)
-- Narrow parameters mean more specificity in the test however greater chance that environment conditions could make the test fail due to absence of a more narrow requirement set
+- Wide parameters mean less specificity in the test around the target components e.g. hotel type / property details (which is a very valid smoke test approach, i.e. env stability, critical transactions always work etc.)
+- Narrow parameters mean more specificity in the test however greater chance that environment conditions could make the test fail due to absence of a more narrow query result potential
+- XHR intercept would be good & predictable, don't have the scope here to try to implement it, the downside with this is of course it starts to introduce complexity into the client (unless we can programmatically pull the spec from the service, then this would be perfect as an isolated component test).
 
 ### Chosen Approach
 - I have chosen to take a 'wide parameter' smoke, monitoring alerting style transaction approach given the project constraints
@@ -30,6 +31,11 @@
 - In this case, if I were to build out the test suite, I'd need to handle both the Hotel/AirBnb search forms, and rather than write logic to decide which one I'm on and to navigate them, if the data-testid attributes were unique for each one it would simplify the future test logic
 - Sometimes the 'down-shift' menu from the location search results doesn't appear timing my test out, I'm not immediately sure why, however a dynamic wait does help (this is a poll wait and not a static sleep). Sometimes however it never appears, this may be a Cypress runtime issue.
 - Sometimes Qantas Hotels tells me, "Couldn't find any hotels" that match my search, but when I interact with the page in the Cypress portal my search location is there. Maybe a Cypress anomaly?
+- Seeing some unusual timeout behaviour, adding in additional waits (dynamic), that seem to calm down the issue
+- On the search results page, each 'result' follows the target="_blank" pattern, of new tab open, which is difficult to manage with Cypress as a testing tool. There's a few strategies to handle this, I first thought of copying the href="/path" and appending this to the original uri, which works fine, then I tried the invoke() method which allows manipulation of the DOM to make this link render in the same page. In retrospect, the href copy is possibly a better strategy.
+
+## Observability
+- Ideally push results to a sink / Prometheus->Grafana
 
 ## How to run
 - Locally within your Node development environment:

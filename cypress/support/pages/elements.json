@@ -6,7 +6,16 @@
     "locationDownshiftMenu": "[role='listbox'][aria-labelledby='location-search-label']",
     "locationSearchButton": "[data-testid='search-hotels-cta']"
   },
-  "qantasPropertySearchPage": {
-    "propertySearchTitle": "[data-testid='location-header']"
+  "propertySearchResults": {
+    "propertySearchTitle": "[data-testid='location-header']",
+    "propertyName": "[data-testid='property-name']",
+    "searchResultChild": "[data-testid='search-result']"
+  },
+  "propertyPage": {
+    "roomResultChild": "[data-testid='offer-card']",
+    "roomOfferChild": "[data-testid='offer-checkout-link']"
+  },
+  "checkoutPage": {
+    "personalDetailsForm": "[data-testid='personal-details-form']"
   }
 }
