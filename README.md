@@ -37,12 +37,15 @@
 ## Observability
 - Ideally push results to a sink / Prometheus->Grafana
 
+## TODO
+- Will add build configurations & infra
+- Will add reporting, i.e. mocha awesome etc.
+
 ## How to run
 - Locally within your Node development environment:
 ### Install packages
 > npm install
 ### Headless Run
 > npx cypress run
-OR
 ### Hosted Portal
 > npx cypress open
