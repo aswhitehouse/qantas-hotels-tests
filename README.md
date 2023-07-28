@@ -23,7 +23,7 @@
 - This is a typical "transaction" style test that I would write as a suite of "critical revenue generating" scenarios that could ideally run constantly sending results into a real-time monitoring dashboard
 - These tests typically provide tremendous value in quickly demonstrating constraints in the current system/SDLC
 
-# Test Structure - Call-Outs:
+### Test Structure - Call-Outs:
 *As part of this approach I have chosen to bake-in implicit assertions (should etc.)as part of the transaction's navigation logic/input data-properties, and not write explicit assertions in the tests
 *This keeps the test methods lean and simple, however does not follow a Given/When/Then or explicit assertion pattern.
 
