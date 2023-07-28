@@ -19,9 +19,13 @@
 - XHR intercept would be good & predictable, don't have the scope here to try to implement it, the downside with this is of course it starts to introduce complexity into the client (unless we can programmatically pull the spec from the service, then this would be perfect as an isolated component test).
 
 ### Chosen Approach
-- I have chosen to take a 'wide parameter' smoke, monitoring alerting style transaction approach given the project constraints
+- I have chosen to take a 'wide parameter' smoke, monitoring alerting style transaction approach given the project constraints, rather than a traditional Given,When,Then style test case with explicit assertions etc.
 - This is a typical "transaction" style test that I would write as a suite of "critical revenue generating" scenarios that could ideally run constantly sending results into a real-time monitoring dashboard
 - These tests typically provide tremendous value in quickly demonstrating constraints in the current system/SDLC
+
+# Test Structure - Call-Outs:
+*As part of this approach I have chosen to bake-in implicit assertions (should etc.)as part of the transaction's navigation logic/input data-properties, and not write explicit assertions in the tests
+*This keeps the test methods lean and simple, however does not follow a Given/When/Then or explicit assertion pattern.
 
 ## Observations
 - Really good to have data-testid attributes everywhere, very test friendly
